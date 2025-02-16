@@ -16,6 +16,7 @@
         <module>niuml_common_redis</module>
         <module>niuml_common_core</module>
         <module>niuml_common_satoken</module>
+        <module>niuml_common_security</module>
     </modules>
 
     <properties>

@@ -54,7 +54,17 @@ public class Constants
     /**
      * 失败标记
      */
-    public static final Integer FAIL = 500;
+    public static final Integer FAIL = 999;
+    //token失效
+    public static final Integer TOKEN_LOSE = 901;
+    //token解析失败
+    public static final Integer TOKEN_ANALYSIS_ERROR = 902;
+    //token为空
+    public static final Integer TOKEN_MISS_ERROR = 903;
+
+    //用户信息数据异常
+    public static final Integer USER_DATA_ERROR = 801;
+
 
     /**
      * 登录成功状态

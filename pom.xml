@@ -14,6 +14,11 @@
     <modules>
         <module>niuml_common</module>
         <module>niuml_auth</module>
+        <module>niuml_dubbo_01</module>
+        <module>niuml_dubbo_interface</module>
+        <module>niuml_dubbo_02</module>
+        <module>niuml_auth_security</module>
+        <module>niuml_auth_test</module>
     </modules>
     <description>微服务系统</description>
 
@@ -44,6 +49,8 @@
         <lombok.version>1.18.34</lombok.version>
         <sa-token.version>1.39.0</sa-token.version>
         <commons-pool2.version>2.9.0</commons-pool2.version>
+        <dubbo.version>3.2.2</dubbo.version>
+        <nacos.version>2.2.2</nacos.version>
     </properties>
 
     <dependencyManagement>
@@ -74,6 +81,11 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring-boot.version}</version>
             </dependency>
 
             <!-- 验证码 -->
@@ -177,6 +189,36 @@
 <!--                <artifactId>commons-pool2</artifactId>-->
 <!--&lt;!&ndash;                <version>${commons-pool2.version}</version>&ndash;&gt;-->
 <!--            </dependency>-->
+            <!-- Dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <!-- Dubbo 注册到 Nacos -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-nacos</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+
+            <!-- Sa-Token 整合 Dubbo -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-dubbo3</artifactId>
+                <version>${sa-token.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>4.4.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>

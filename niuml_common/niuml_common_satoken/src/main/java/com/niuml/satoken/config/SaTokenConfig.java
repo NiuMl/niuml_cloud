@@ -32,6 +32,7 @@ public class SaTokenConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        System.out.println("excludeUrls: " + excludeUrls);
         // 注册 Sa-Token 拦截器打开注解鉴权功能
         registry.addInterceptor(new SaInterceptor(handler -> {
                     SaRouter.match("/**").check(StpUtil::checkLogin);

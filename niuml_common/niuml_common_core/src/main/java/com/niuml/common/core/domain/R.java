@@ -3,6 +3,7 @@ package com.niuml.common.core.domain;
 
 import com.niuml.common.core.constant.Constants;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -10,6 +11,7 @@ import java.io.Serializable;
  */
 public class R<T> implements Serializable
 {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     /** 成功 */
