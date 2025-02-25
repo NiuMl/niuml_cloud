@@ -42,10 +42,7 @@ public class WebConfig  {
 
     @Resource
     private  ApplicationContext applicationContext;
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+
     @Bean
     public SecurityFilterChain loginFilterChain(HttpSecurity http) throws Exception {
         webSecurityConfig.commonHttpSetting(http);
